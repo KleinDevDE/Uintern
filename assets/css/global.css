@@ -1,0 +1,470 @@
+@font-face {
+    font-family:'ClearfaceStd-Bold';
+    src:url(../fonts/ClearfaceStd-Bold.woff2) format("woff2") , url(../fonts/ClearfaceStd-Bold.woff2) format("woff")
+}
+@font-face {
+    font-family:'ClearfaceStd-Regular';
+    src:url(../fonts/ClearfaceStd-Regular.woff2) format("woff2") , url(../fonts/ClearfaceStd-Regular.woff2) format("woff")
+}
+@font-face {
+    font-family:'ClearfaceStd-Italic';
+    src:url(../fonts/ClearfaceStd-Italic.woff2) format("woff2") , url(../fonts/ClearfaceStd-Italic.woff2) format("woff")
+}
+body {
+    font:15px/22px Verdana,Arial,sans-serif;
+    color:#000;
+}
+
+a {
+    color:#8ab43f;
+    text-decoration:none
+}
+a:hover {
+    color:gray
+}
+a img {
+    border:0
+}
+h1 {
+    width:730px;
+    margin:38px auto 48px;
+    text-align:center;
+    padding:18px 0;
+    border-top:1px solid #878787;
+    border-bottom:1px solid #878787;
+    font:35px/42px "ClearfaceStd-Italic",Arial,sans-serif;
+    color:#003976
+}
+h2 {
+    border-bottom:1px solid #878787;
+    font:28px "ClearfaceStd-Italic",Verdana,sans-serif;
+    color:#8ab43f;
+    margin:52px 0 10px
+}
+
+#h2small {
+    width: 50%;
+    border-bottom:1px solid #878787;
+    font:28px "ClearfaceStd-Italic",Verdana,sans-serif;
+    color:#8ab43f;
+    margin:52px 0 10px
+}
+
+.wrp {
+    width: 70%;
+    margin:0 auto;
+    height: auto;
+    min-height: 100%;
+}
+#header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    box-shadow:0 -20px 16px 20px #636363;
+    z-index:3;
+    height: 60px;
+}
+#header>.wrp {
+    height: 100%;
+    position:relative;
+}
+#header ul {
+    padding:0;
+}
+#mainNav {
+    position:absolute;
+    left: 5%;
+    font:17px "ClearfaceStd-Regular",Arial,sans-serif;
+    color:#003976;
+    top: 50%;
+}
+#mainNav>li {
+    display:inline-block;
+    vertical-align:top;
+    padding-left:10px;
+    margin-left:4px;
+    position:relative;
+    padding-bottom:10px;
+    cursor:default
+}
+#mainNav>li:first-child {
+    margin-left:0
+}
+#mainNav>li.logout{
+    margin-left: 100px;
+}
+#mainNav>li.logout:hover:before {
+    content:"";
+    display:block;
+    position:absolute;
+    left:0;
+    top:-15px;
+    width:100%;
+    border-top:4px solid #ff3b36
+}
+#mainNav>li.active:before,#mainNav>li:hover:before {
+    content:"";
+    display:block;
+    position:absolute;
+    left:0;
+    top:-15px;
+    width:100%;
+    border-top:4px solid #8ab43f
+}
+#mainNav>li.active,#mainNav li:hover>a,#mainNav .active>a {
+    color:#8ab43f
+}
+#mainNav a {
+    color:#003976;
+    text-decoration:none;
+    white-space:nowrap
+}
+#mainNav>li>ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    padding:11px 20px 12px 10px;
+    background:#fff;
+    box-shadow:-10px 10px 10px rgba(64,64,64,.85);
+    line-height:32px
+}
+#mainNav>li:hover>ul {
+    display:block
+}
+#mainNav>li>ul li {
+    display:block
+}
+
+
+#content{
+    margin: 8% auto;
+}
+
+#content i{
+    font-style: italic;
+}
+
+#footer{
+    height: 60px;
+    position: fixed;
+    left: 0 ; right: 0; bottom: 0;
+    color: white;
+    line-height: 60px;
+    font-size: 14px;
+    text-align: center;
+}
+.blueBg,.blueBtn {
+    color:#fff;
+    background:#003772;
+    background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMzc3MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY4JSIgc3RvcC1jb2xvcj0iIzAwNjZhOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDM3NzIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background:-moz-linear-gradient(left,#003772 0%,#0066a9 68%,#003772 100%);
+    background:-webkit-gradient(linear,left top,right top,color-stop(0%,#003772),color-stop(68%,#0066a9),color-stop(100%,#003772));
+    background:-webkit-linear-gradient(left,#003772 0%,#0066a9 68%,#003772 100%);
+    background:-o-linear-gradient(left,#003772 0%,#0066a9 68%,#003772 100%);
+    background:-ms-linear-gradient(left,#003772 0%,#0066a9 68%,#003772 100%);
+    background:linear-gradient(to right,#003772 0%,#0066a9 68%,#003772 100%)
+}
+a.blueBg,a.blueBtn,.blueBg a,.blueBtn a {
+    color:#fff
+}
+.blueBtn:not(.noWhite):hover {
+    background:#fff;
+    color:#5c5b5c;
+    box-shadow:inset -10px 10px 10px 0 #dedddd , 2px -2px 5px 0 #dedddd inset
+}
+.blueBtn {
+    display:inline-block;
+    padding:10px 20px;
+    font:21px "ClearfaceStd-Italic",Verdana,sans-serif
+}
+
+
+.login-form{
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.login-form label{
+    color: #7b7b7b;
+    font-size: 15px;
+    margin-left: -30%;
+}
+
+.login-form input{
+    background-color: #eeeeee;
+    color: #2b2b2b;
+    padding: 4px 10px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    border-radius: 3px;
+    margin-left: -30%;
+    margin-top: 10px;
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.login-form button{
+    border: none;
+    border-radius: 2px;
+    background-color:#003772;
+    background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMzc3MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY4JSIgc3RvcC1jb2xvcj0iIzAwNjZhOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDM3NzIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background:-moz-linear-gradient(left,#003772 -10%,#0066a9 100%,#003772 0%);
+    color: white;
+    height: 25px;
+    margin-right: -30%;
+}
+
+.login-form #error{
+    color: #b43f43;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 60%;
+    border-radius: 1px;
+    margin: 0 auto;
+}
+.card .title{
+    font-size: 18px;
+}
+.card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card .info{
+    margin: 7px;
+}
+.card b{
+    margin: 5px;
+    font-weight: bold;
+    font-family: "ClearfaceStd-Italic", Verdana, serif;
+}
+.card hr {
+    width: 25%;
+    margin-left: 0;
+    margin-top: 1px;
+    color: white;
+    border-width: 1px;
+}
+
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+    url('http://i.stack.imgur.com/FhHRx.gif')
+    50% 50%
+    no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .modal {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+#feedbackFooter{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 1;
+    /*visibility: hidden;
+    opacity: 0;*/
+}
+/*
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+*/
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.popup .close:hover {
+    color: #06D85F;
+}
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+.representationplan{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mensa{
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+#info{
+    width: 80%;
+}
+
+.buttonDownload {
+    display: inline-block;
+    position: relative;
+    padding: 10px 25px;
+
+    background-color: #4CC713;
+    color: white;
+
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 0.9em;
+    text-align: center;
+    text-indent: 15px;
+}
+
+.buttonDownload:hover {
+    background-color: #333;
+    color: white;
+}
+
+.buttonDownload:before, .buttonDownload:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 52%;
+}
+
+/* Download box shape  */
+.buttonDownload:before {
+    width: 10px;
+    height: 2px;
+    border-style: solid;
+    border-width: 0 2px 2px;
+}
+
+/* Download arrow shape */
+.buttonDownload:after {
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    margin-top: -7px;
+
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: transparent;
+    border-top-color: inherit;
+
+    animation: downloadArrow 2s linear infinite;
+    animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+    border-color: #4CC713;
+}
+
+.buttonDownload:hover:after {
+    border-top-color: #4CC713;
+    animation-play-state: running;
+}
+
+.feedback{
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.feedback input{
+    width: 50%;
+}
+
+.feedback textarea{
+    width: 50%;
+    height: 20%;
+    font:15px Verdana,Arial,sans-serif;
+}
+
+.feedback button{
+    border: none;
+    border-radius: 2px;
+    background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMzc3MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY4JSIgc3RvcC1jb2xvcj0iIzAwNjZhOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDM3NzIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background:-moz-linear-gradient(left,#003772 -10%,#0066a9 100%,#003772 0%);
+    color: white;
+    height: 25px;
+}
+
+.feedback button:hover{
+    background:-moz-linear-gradient(left,#003782 -10%,#0066B4 100%,#003782 0%);
+    cursor: pointer;
+}
+
+/* keyframes for the download icon anim */
+@keyframes downloadArrow {
+    /* 0% and 0.001% keyframes used as a hackish way of having the button frozen on a nice looking frame by default */
+    0% {
+        margin-top: -7px;
+        opacity: 1;
+    }
+
+    0.001% {
+        margin-top: -15px;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        margin-top: 0;
+        opacity: 0;
+    }
+}

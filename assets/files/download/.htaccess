@@ -1,0 +1,11 @@
+<FilesMatch "Wochenendfreizeitplaner_SJ*\.(pdf)$" >
+    Allow from all
+</FilesMatch>
+
+<FilesMatch "AG-Programm_SJ*\.(pdf)$" >
+    Allow from all
+</FilesMatch>
+
+<FilesMatch "Vertretungsplan\.(pdf|docx)$" >
+    Allow from all
+</FilesMatch>

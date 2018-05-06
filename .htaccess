@@ -1,0 +1,73 @@
+# Verbiete jeglichen Zugriff auf jegliche Datei
+Order deny,allow
+Deny from all
+Options All -Indexes
+
+# Bestimmte Dateien dürfen (und müssen!) dennoch aufrufbar sein
+<FilesMatch "\.(css)$">
+Allow from all
+</FilesMatch>
+
+<Files ~ "^(index|login|images)\.php$">
+Allow from all
+</Files>
+
+<Files ~ "^\.(woff2)$" >
+Allow from all
+</Files>
+
+
+
+# Verbessere die Performance
+<ifmodule mod_php4.c>
+	php_value zlib.output_compression 16386
+</ifmodule>
+<FilesMatch ".(gif|jpg|jpeg|png|ico|swf)$">
+	Header set Cache-Control "max-age=5"
+</FilesMatch>
+# 604800 - 1 Woche
+<FilesMatch ".(js|css|pdf|txt|docx)$">
+	Header set Cache-Control "max-age=5"
+</FilesMatch>
+# 43200 - 1 Tag
+<FilesMatch ".(html|htm)$">
+	Header set Cache-Control "max-age=5"
+</FilesMatch>
+<FilesMatch "\.(php)$">
+	Header unset Cache-Control
+</FilesMatch>
+
+# MIME types
+AddType application/pdf pdf
+AddType application/x-tar tar
+AddType application/zip zip
+AddType audio/x-wav wav
+AddType image/gif gif GIF
+AddType image/jpeg jpeg jpg jpe JPG
+AddType text/html html htm
+AddType text/plain txt
+AddType text/richtext rtx
+AddType video/x-msvideo avi
+
+# Setze PHP Upload Limit auf 10MB
+php_value upload_max_filesize  10M
+LimitRequestBody 10240000
+
+# Blockiere die gängigen scammer
+RewriteBase /
+RewriteCond %{HTTP_USER_AGENT} ^Anarchie [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ASPSeek [OR]
+RewriteCond %{HTTP_USER_AGENT} ^attach [OR]
+RewriteCond %{HTTP_USER_AGENT} ^autoemailspider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xenu [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus.*Webster [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteRule ^.* - [F,L]
+
+# automatically corect simple speling erors
+<IfModule mod_speling.c>
+	CheckSpelling On
+</IfModule>
+
+AddDefaultCharset UTF-8
