@@ -3,11 +3,8 @@
 Installation
 =============
 
-Allgemein PHP  
-`apt-get install php php-mysql php-zip php-curl`  
-
-PHP 7.0  
-`apt-get install php7.0 php7.0-mysql php7.0-zip php7.0-curl`  
+PHP  
+`apt-get install php php-mysql php-zip php-curl php-pdo`  
 
 
 Folgende Seite aufrufen und Anweisungen folgen
